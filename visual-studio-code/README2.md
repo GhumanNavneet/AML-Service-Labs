@@ -9,7 +9,7 @@ If you have not cloned this repository to your virtual machine, do so now. All o
 1. On your virtual machine expand the folder `03-model-deployment`.<br/>
 2. Expand the `data` folder. This folder contains the CSV file `UsedCars_Affordability.csv` which contains the complete data set with labels (Affordable is 1 for affordable, 0 for not affordable).<br/>
 3. To run a lab, start Visual Studio Code and open the folder: `03-model-deployment` and click the starting python file: `03_model_deployment.py`.<br/>
-4. Confirm that your have setup `azure_automl` as your interpreter.<br/><br/>
+4. Confirm that your have setup `azure_automl` as your interpreter.<br/>
 5. `03_model_deployment.py` is the Python file you will step through executing in this lab.<br/>
 6. For each step click on `Run Cell` just above the step. 
 
