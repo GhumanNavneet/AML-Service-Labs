@@ -15,10 +15,10 @@ If you have not cloned this repository to your virtual machine, do so now. All o
 
 ## Exercise 2 - Train a model using AutoML
 This lab builds upon the lessons learned in the previous lab, but is self contained so you work through this lab without having to run a previous lab.<br/>
-1. Begin with Step 1. In this step you are loading the data prepared in previous labs and acquiring (or creating) an instance of your Azure Machine Learning Workspace. In this step, be sure to set the values for `subscription_id`, `resource_group`, `workspace_name` and `workspace_region` as directed by the comments. Execute step 1.<br/>
-2. To train a model using AutoML you need only provide a configuration for AutoML that defines items such as the type of model (classification or regression), the performance metric to optimize, exit criteria in terms of max training time and iterations and desired performance, any algorithms that should not be used, and the path into which to output the results. This configuration is specified using the `AutomMLConfig` class, which is then used to drive the submission of an experiment via `experiment.submit`.  When AutoML finishes the parent run, you can easily get the best performing run and model from the returned run object by using `run.get_output()`. Execute Step 2 to define the helper function that wraps the AutoML job submission.<br/>
-3. In Step 3, you invoke the AutoML job. Execute Step 3.<br/>
-4. Try out the best model by using Step 4.
+1. Begin with **Step 1**. In this step you are loading the data prepared in previous labs and acquiring (or creating) an instance of your Azure Machine Learning Workspace. In this step, be sure to set the values for `subscription_id`, `resource_group`, `workspace_name` and `workspace_region` as directed by the comments. Execute step 1.<br/>
+2. To train a model using AutoML you need only provide a configuration for AutoML that defines items such as the type of model (classification or regression), the performance metric to optimize, exit criteria in terms of max training time and iterations and desired performance, any algorithms that should not be used, and the path into which to output the results. This configuration is specified using the `AutomMLConfig` class, which is then used to drive the submission of an experiment via `experiment.submit`.  When AutoML finishes the parent run, you can easily get the best performing run and model from the returned run object by using `run.get_output()`. Execute **Step 2** to define the helper function that wraps the AutoML job submission.<br/>
+3. In **Step 3**, you invoke the AutoML job. Execute **Step 3****.<br/>
+4. Try out the best model by using **Step 4**.
 
 ## Exercise 3 - Register an AutoML created model
-1. You can register models created by AutoML with Azure Machine Learning just as you would any other model. Execute Step 5 to register this model.
+1. You can register models created by AutoML with Azure Machine Learning just as you would any other model. Execute **Step 5** to register this model.
