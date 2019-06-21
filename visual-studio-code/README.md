@@ -22,7 +22,7 @@ If you have not cloned this repository to your virtual machine, do so now. All o
 4. Train the model by fitting a LogisticRegression against the scaled input features (X_scaled) and the labels (y). Execute **Step 4**.</bn>
 5. Try prediction - if you set the age to 60 months and km to 40,000, does the model predict you can afford the car? Execute **Step 5**.<br/>
 6. Now, let's get a sense for how accurate the model is. Execute **Step 6**. What was your model's accuracy?<br/>
-7. One thing that can affect the model's performance is how much data of all the labeled training data available is used to train the model. In **Step 7**, you define a method that uses train_test_split from Scikit-Learn that will enable you to split the data using different percentages. Execute ******Step 7**** to register this function.
+7. One thing that can affect the model's performance is how much data of all the labeled training data available is used to train the model. In **Step 7**, you define a method that uses train_test_split from Scikit-Learn that will enable you to split the data using different percentages. Execute **Step 7** to register this function.
 
 ## Exercise 3 - Use Azure Machine Learning to log performance metrics
 In the steps that follow, you will train multiple models using different sizes of training data and observe the impact on performance (accuracy). Each time you create new model, you are executing a Run in the terminology of Azure Machine Learning service. In this case, you will create one Experiment and execute multiple Runs within it, each with different training percentages (and resultant varying accuracies). 
@@ -46,7 +46,7 @@ Minimum number of nodes requested have been provisioned
 {'allocationState': 'steady', 'allocationStateTransitionTime': '2018-11-17T17:56:07.361000+00:00', 'creationTime': '2018-11-17T17:52:53.601000+00:00', 'currentNodeCount': 1, 'errors': None, 'nodeStateCounts': {'idleNodeCount': 0, 'leavingNodeCount': 0, 'preparingNodeCount': 1, 'runningNodeCount': 0, 'unusableNodeCount': 0}, 'provisioningState': 'succeeded', 'provisioningStateTransitionTime': '2018-11-17T17:53:59.653000+00:00', 'scaleSettings': {'manual': None, 'autoScale': {'maximumNodeCount': 3, 'minimumNodeCount': 1, 'initialNodeCount': 1}}, 'vmPriority': 'lowpriority', 'vmSize': 'STANDARD_DS11_V2'}
 
 ```
-<br/>
+
 2. With your cluster ready, you need to upload the training data to the default DataStore for your AML Workspace (which uses Azure Storage). Execute **Step 13** to upload the data folder.<br/>
 3. Next, you will need to create a training script that is similar to the code you have executed locally to train the model. Open `training/train.py` and read it. You do not need to execute this script, as you will send it to AML Compute for execution.<br/>
 4. Return to `01_model_training.py`. You will create an estimator that describes the configuration of the job that will execute your model training script. Execute **Step 14** to create this estimator.<br/>
