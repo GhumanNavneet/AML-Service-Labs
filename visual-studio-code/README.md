@@ -7,7 +7,7 @@ If you have not cloned this repository to your virtual machine, do so now. All o
 
 ## Exercise 1 - Get oriented to the lab files
 
-1. On your virtual computer expand the folder `01-model-training`.
+1. On your virtual machine expand the folder `01-model-training`.
 2. Expand the `data` folder. This folder contains two CSV files. `UsedCars_Clean.csv` represents the unlabeled data and `UsedCars_Affordability.csv` contains the complete data set with labels (Affordable is 1 for affordable, 0 for not affordable).
 3. Expand `training`. This folder contains train.py which will be used later in the lab to train the model using a remote cluster provided by AML Compute.
 4. To run a lab, start Visual Studio Code and open the folder: `01-model-training` and click the starting python file: `01_model_training.py`.
