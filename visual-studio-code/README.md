@@ -12,7 +12,7 @@ If you have not cloned this repository to your virtual machine, do so now. All o
 3. Expand `training`. This folder contains train.py which will be used later in the lab to train the model using a remote cluster provided by AML Compute.
 4. To run a lab, start Visual Studio Code and open the folder: `01-model-training` and click the starting python file: `01_model_training.py`.
 5. Confirm that your have setup `azure_automl` as your interpreter.
-6. `01_model_training.py` is the Python file you will step thru executing in this lab. 
+6. `01_model_training.py` is the Python file you will step through executing in this lab. 
 7. For each step click on `Run Cell` just above the step. 
 
 ## Exercise 2 - Train a simple model locally
