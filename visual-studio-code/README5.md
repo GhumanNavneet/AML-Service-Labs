@@ -152,8 +152,7 @@ In this exercise you will deploy 2 modules to your IoT Edge device. One is a tel
 ```
 {
     "routes": {
-        "sensorToMachineLearning":"FROM /messages/modules/tempSensor/outputs/temperatureOutput INTO 
-        BrokeredEndpoint(\"/modules/machinelearningmodule/inputs/amlInput\")",
+        "sensorToMachineLearning":"FROM /messages/modules/tempSensor/outputs/temperatureOutput INTO BrokeredEndpoint(\"/modules/machinelearningmodule/inputs/amlInput\")",
         "machineLearningToIoTHub": "FROM /messages/modules/machinelearningmodule/outputs/amlOutput INTO $upstream"
     }
 }
