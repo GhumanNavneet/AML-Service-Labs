@@ -7,7 +7,7 @@ If you have not cloned this repository to your virtual machine, do so now. All o
 
 ## Exercise 1 - Get oriented to the lab files
 1. On your virtual computer expand the folder `05-deep-learning`.<br/>
-2. To run a lab, start Visual Studio Code and open the folder: `05-deep-learning` and click the starting python file: `05_deep_learning.py`.<br/><br/>
+2. To run a lab, start Visual Studio Code and open the folder: `05-deep-learning` and click the starting python file: `05_deep_learning.py`.<br/>
 3. Confirm that your have setup `azure_automl` as your interpreter.<br/>
 4. `05_deep_learning.py` is the Python file you will step through executing in this lab.<br/>
 5. For each step click on `Run Cell` just above the step. 
