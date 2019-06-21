@@ -6,7 +6,7 @@ In this lab you will deploy a trained model to containers using an Azure Contain
 If you have not cloned this repository to your virtual machine, do so now. All of the artifacts for this lab are located under `starter-artifacts/visual-studio-code`.
 
 ## Exercise 1 - Get oriented to the lab files
-1. On your virtual computer expand the folder `03-model-deployment`.<br/>
+1. On your virtual machine expand the folder `03-model-deployment`.<br/>
 2. Expand the `data` folder. This folder contains the CSV file `UsedCars_Affordability.csv` which contains the complete data set with labels (Affordable is 1 for affordable, 0 for not affordable).<br/>
 3. To run a lab, start Visual Studio Code and open the folder: `03-model-deployment` and click the starting python file: `03_model_deployment.py`.<br/>
 4. Confirm that your have setup `azure_automl` as your interpreter.<br/><br/>
