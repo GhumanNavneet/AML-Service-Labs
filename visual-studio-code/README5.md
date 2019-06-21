@@ -125,7 +125,7 @@ In this exercise you will use a previously trained model using the Azure Machine
 3. With a Workspace in hand you are ready to build a container that wraps your model. This consists of three steps- creating a ContainerImage, registering the Model and creating an Image. Execute Step 2 and wait for it to complete. When it is finished you will have a Docker container image that you will be able to deploy to your IoT Edge device.
 
 ## Exercise 5 - Deploy the modules
-In this exercise you will deploy 2 modules to your IoT Edge device. One is a telemetry generator that will produce simulated temperature readings and the other will be an Azure Machine Learning module that will perform anomaly detection.<br/><br/><br/>
+In this exercise you will deploy 2 modules to your IoT Edge device. One is a telemetry generator that will produce simulated temperature readings and the other will be an Azure Machine Learning module that will perform anomaly detection.<br/>
 1. Navigate to the Azure Portal in your browser and locate your IoT Hub.<br/>
 2. Select **IoT Edge** under Automatic Device Management and select your IoT Edge device.<br/>
 ![IoT Edge devices](./images/01.png)
