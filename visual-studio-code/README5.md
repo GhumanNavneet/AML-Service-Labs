@@ -116,7 +116,7 @@ sudo systemctl status iotedge
 ```
 sudo iotedge list
 ```
-16. Your device is now configured and ready to receive cloud-deployed modules. 
+16. Your device is now configured and ready to receive cloud-deployed modules.
 
 ## Exercise 4 - Prepare the Azure Machine Learning module
 In this exercise you will use a previously trained model using the Azure Machine Learning SDK and deploy it along with a scoring script to an image. This model will score temperature telemetry data for anomalies. In a subsequent exercise, you will deploy this module to your IoT Edge device to perform scoring on the device.<br/>
