@@ -47,7 +47,7 @@ Minimum number of nodes requested have been provisioned
 
 ```
 
-2. With your cluster ready, you need to upload the training data to the default DataStore for your AML Workspace (which uses Azure Storage). Execute **Step 13** to upload the data folder.<br/>
-3. Next, you will need to create a training script that is similar to the code you have executed locally to train the model. Open `training/train.py` and read it. You do not need to execute this script, as you will send it to AML Compute for execution.<br/>
-4. Return to `01_model_training.py`. You will create an estimator that describes the configuration of the job that will execute your model training script. Execute **Step 14** to create this estimator.<br/>
-5. As the last step, submit the job using the `submit()` method of the Experiment object. Execute **Step 15** to remotely execute your training script. The output you should see will begin with the creation of a Docker Container that contains your configured dependencies, followed by the execution of your training script.
+1. With your cluster ready, you need to upload the training data to the default DataStore for your AML Workspace (which uses Azure Storage). Execute **Step 13** to upload the data folder.<br/>
+1. Next, you will need to create a training script that is similar to the code you have executed locally to train the model. Open `training/train.py` and read it. You do not need to execute this script, as you will send it to AML Compute for execution.<br/>
+1. Return to `01_model_training.py`. You will create an estimator that describes the configuration of the job that will execute your model training script. Execute **Step 14** to create this estimator.<br/>
+1. As the last step, submit the job using the `submit()` method of the Experiment object. Execute **Step 15** to remotely execute your training script. The output you should see will begin with the creation of a Docker Container that contains your configured dependencies, followed by the execution of your training script.
