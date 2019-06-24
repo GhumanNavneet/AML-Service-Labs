@@ -8,14 +8,15 @@ If you have not cloned this repository to your virtual machine, do so now. All o
 ## Exercise 1 - Get oriented to the lab files
 
 1. On your virtual machine expand the folder `01-model-training`.
-2. Expand the `data` folder. This folder contains two CSV files. `UsedCars_Clean.csv` represents the unlabeled data and `UsedCars_Affordability.csv` contains the complete data set with labels (Affordable is 1 for affordable, 0 for not affordable).
-3. Expand `training`. This folder contains train.py which will be used later in the lab to train the model using a remote cluster provided by AML Compute.
-4. To run a lab, start Visual Studio Code and open the folder: `01-model-training` and click the starting python file: `01_model_training.py`.
-5. Confirm that your have setup `azure_automl` as your interpreter.
-6. `01_model_training.py` is the Python file you will step through executing in this lab.
+2. Expand the `data` folder. This folder contains two CSV files. `UsedCars_Clean.csv` represents the unlabeled data and `UsedCars_Affordability.csv` contains the complete data set with labels (Affordable is 1 for affordable, 0 for not affordable).<br/>
+3. Expand `training`. This folder contains train.py which will be used later in the lab to train the model using a remote cluster provided by AML Compute.<br/>
+4. To run a lab, start Visual Studio Code and open the folder: `01-model-training` and click the starting python file: `01_model_training.py`.<br/>
+5. Confirm that your have setup `azure_automl` as your interpreter.<br/>
+6. `01_model_training.py` is the Python file you will step through executing in this lab.<br/>
 7. For each step click on `Run Cell` just above the step.
 
 ## Exercise 2 - Train a simple model locally
+
 1. Execute **Step 1**. Take a moment to look at the data loaded into the Pandas Dataframe - it contains data about used cars such as the price (in dollars), age (in years), KM (kilometers driven) and other attributes like weather it is automatic transimission, the number of doors, and the weight.<br/>
 2. In **Step 2**, we are going to try and build a model that can answer the question "Can I afford a car that is X months old and has Y kilometers on it, given I have $12,000 to spend?". We will engineer the label for affordable. Execute **Step 2**.<br/>
 3. We are going to train a Logistic Regression model locally. This type of model requires us to standardize the scale of our training features Age and KM, so we use the `StandardScaler` from Scikit-Learn to transform these features so that they have values centered with a mean around 0 (mostly between -2.96 and 1.29). Execute **Step 3**. Observe the difference in min and max values between the un-scaled and scaled Dataframes.<br/>
@@ -36,6 +37,7 @@ In the steps that follow, you will train multiple models using different sizes o
 Up until now, all of your training was executed locally on Azure Notebooks. Now you will execute the same logic targeting a remote AML Compute cluster, which you will provision from code.
 
 1. Read and then execute **Step 12** in which you will create an AML Compute cluster using code. Once your cluster is ready, you should see output similar to the following:
+
 ```
 Creating a new compute target...
 Creating
