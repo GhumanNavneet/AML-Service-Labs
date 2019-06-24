@@ -35,7 +35,7 @@ In the steps that follow, you will train multiple models using different sizes o
 ## Exercise 4 - Train remotely using AML Compute
 Up until now, all of your training was executed locally on Azure Notebooks. Now you will execute the same logic targeting a remote AML Compute cluster, which you will provision from code.
 
-1. Read and then execute **Step 12** in which you will create an AML Compute cluster using code. Once your cluster is ready, you should see output similar to the following:
+1. Read and then execute **Step 12** in which you will create an AML Compute cluster using code. Once your cluster is ready, you should see output similar to the following:<br/>
 
 ```
 Creating a new compute target...
