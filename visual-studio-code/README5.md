@@ -157,7 +157,6 @@ In this exercise you will deploy 2 modules to your IoT Edge device. One is a tel
     }
 }
 ```
-
 18. Select **Next**.<br/>
 19. In the **Review Deployment** step of the wizard, select **Submit**.<br/>
 20. Return to the device details page and select **Refresh**. In addition to the edgeAgent module that was created when you first started the service, you should see another runtime module called edgeHub and the tempSensor and machinelearningmodule listed. It may take about 5-10 minutes for the two new modules to appear and start running. Once you see a **Runtime Status** of Running for all modules you can proceed.
