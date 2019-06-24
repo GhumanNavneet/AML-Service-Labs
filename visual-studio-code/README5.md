@@ -148,7 +148,6 @@ In this exercise you will deploy 2 modules to your IoT Edge device. One is a tel
 15. Select Next.<br/>
 16. Back in the Set Modules step, select **Next**.<br/>
 17. In the Specify Routes step, copy the **JSON** below into the text box. The first **route** transports messages from the temperature sensor to the machine learning module via the "amlInput" endpoint, which is the endpoint that all Azure Machine Learning modules use. The second **route** transports messages from the machine learning module to IoT Hub. In this route, `amlOutput` is the endpoint that all Azure Machine Learning modules use to output data, and `$upstream` denotes IoT Hub.<br/>
-
 ```
 {
     "routes": {
