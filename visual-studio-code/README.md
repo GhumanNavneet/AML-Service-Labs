@@ -1,12 +1,10 @@
 # Lab 1 - Training a Machine Learning Model using Azure Machine Learning service
-
 In this lab you will setup the Azure Machine Learning service from code and create a classical machine learning model that logs metrics collected during model training.
 
 ## Exercise 0 - Get the lab files
 If you have not cloned this repository to your virtual machine, do so now. All of the artifacts for this lab are located under `starter-artifacts/visual-studio-code`.
 
 ## Exercise 1 - Get oriented to the lab files
-
 1. On your virtual machine expand the folder `01-model-training`.
 2. Expand the `data` folder. This folder contains two CSV files. `UsedCars_Clean.csv` represents the unlabeled data and `UsedCars_Affordability.csv` contains the complete data set with labels (Affordable is 1 for affordable, 0 for not affordable).<br/>
 3. Expand `training`. This folder contains train.py which will be used later in the lab to train the model using a remote cluster provided by AML Compute.<br/>
@@ -16,7 +14,6 @@ If you have not cloned this repository to your virtual machine, do so now. All o
 7. For each step click on `Run Cell` just above the step.
 
 ## Exercise 2 - Train a simple model locally
-
 1. Execute **Step 1**. Take a moment to look at the data loaded into the Pandas Dataframe - it contains data about used cars such as the price (in dollars), age (in years), KM (kilometers driven) and other attributes like weather it is automatic transimission, the number of doors, and the weight.<br/>
 2. In **Step 2**, we are going to try and build a model that can answer the question "Can I afford a car that is X months old and has Y kilometers on it, given I have $12,000 to spend?". We will engineer the label for affordable. Execute **Step 2**.<br/>
 3. We are going to train a Logistic Regression model locally. This type of model requires us to standardize the scale of our training features Age and KM, so we use the `StandardScaler` from Scikit-Learn to transform these features so that they have values centered with a mean around 0 (mostly between -2.96 and 1.29). Execute **Step 3**. Observe the difference in min and max values between the un-scaled and scaled Dataframes.<br/>
@@ -44,7 +41,7 @@ Creating
 succeeded.....
 BatchAI wait for completion finished
 Minimum number of nodes requested have been provisioned
-{'allocationState': 'steady', 'allocationStateTransitionTime': '2018-11-17T17:56:07.361000+00:00', 'creationTime': '2018-11-17T17:52:53.601000+00:00', 'currentNodeCount': 1, 'errors': None, 'nodeStateCounts': {'idleNodeCount': 0, 'leavingNodeCount': 0, 'preparingNodeCount': 1, 'runningNodeCount': 0, 'unusableNodeCount': 0}, 'provisioningState': 'succeeded', 'provisioningStateTransitionTime': '2018-11-17T17:53:59.653000+00:00', 'scaleSettings': {'manual': None, 'autoScale': {'maximumNodeCount': 3, 'minimumNodeCount': 1, 'initialNodeCount': 1}}, 'vmPriority': 'lowpriority', 'vmSize': 'STANDARD_DS11_V2'}
+{'allocationState': 'steady', 'allocationStateTransitionTime': '2018-11-17T17:56:07.361000+00:00', 'creationTime': '2018-11-17T17:52:53.601000+00:00', 'currentNodeCount': 1, 'errors': None, 'nodeStateCounts': {'idleNodeCount': 0, 'leavingNodeCount': 0,'preparingNodeCount': 1, 'runningNodeCount': 0, 'unusableNodeCount': 0}, 'provisioningState': 'succeeded','provisioningStateTransitionTime': '2018-11-17T17:53:59.653000+00:00', 'scaleSettings': {'manual': None, 'autoScale':{'maximumNodeCount': 3, 'minimumNodeCount': 1, 'initialNodeCount': 1}}, 'vmPriority': 'lowpriority', 'vmSize': 'STANDARD_DS11_V2'}
 
 ```
 
