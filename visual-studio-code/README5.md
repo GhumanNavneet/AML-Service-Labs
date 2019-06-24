@@ -133,8 +133,8 @@ In this exercise you will deploy 2 modules to your IoT Edge device. One is a tel
 ![Set Modules](./images/02.png)
 4. In the **Add Modules** step of the wizard, find the Deployment Modules section. Click **Add** then select IoT Edge Module.<br/>
 ![Add modules](./images/03.png)
-5. In the Name field, enter `tempSensor`.<br/><br/>
-6. In the Image URI field, enter `mcr.microsoft.com/azureiotedge-simulated-temperature-sensor:1.0`. This image is available from  Microsoft supplied container registry.<br/><br/>
+5. In the Name field, enter `tempSensor`.<br/>
+6. In the Image URI field, enter `mcr.microsoft.com/azureiotedge-simulated-temperature-sensor:1.0`. This image is available from  Microsoft supplied container registry.<br/>
 7. Leave the other settings unchanged, and select Save.<br/>
 ![IoT Edge Custom Modules](./images/04.png)
 8. Next you will add the machine learning module that you created.<br/>
@@ -145,9 +145,10 @@ In this exercise you will deploy 2 modules to your IoT Edge device. One is a tel
 13. From the Workspace dropdown, select your Azure Machine Learning Workspace.<br/>
 14. From the Image dropdown, select the machine learning image you recently deployed.<br/>
 ![Machine Learning module](./images/05.png)
+
 15. Select Next.<br/>
 16. Back in the Set Modules step, select **Next**.<br/>
-17. In the Specify Routes step, copy the **JSON** below into the text box. The first **route** transports messages from the temperature sensor to the machine learning module via the "amlInput" endpoint, which is the endpoint that all Azure Machine Learning modules use. The second **route** transports messages from the machine learning module to IoT Hub. In this route, `amlOutput` is the endpoint that all Azure Machine Learning modules use to output data, and `$upstream` denotes IoT Hub.
+17. In the Specify Routes step, copy the **JSON** below into the text box. The first **route** transports messages from the temperature sensor to the machine learning module via the "amlInput" endpoint, which is the endpoint that all Azure Machine Learning modules use. The second **route** transports messages from the machine learning module to IoT Hub. In this route, `amlOutput` is the endpoint that all Azure Machine Learning modules use to output data, and `$upstream` denotes IoT Hub.<br/>
 ```
 {
     "routes": {
