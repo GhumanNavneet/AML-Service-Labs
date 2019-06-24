@@ -126,28 +126,29 @@ In this exercise you will use a previously trained model using the Azure Machine
 3. With a Workspace in hand you are ready to build a container that wraps your model. This consists of three steps- **creating** a Container Image, **registering** the Model and **creating** an Image. Execute Step 2 and wait for it to complete. When it is finished you will have a **Docker container** image that you will be able to deploy to your **IoT Edge** device.
 
 ## Exercise 5 - Deploy the modules
-In this exercise you will deploy 2 modules to your IoT Edge device. One is a telemetry generator that will produce simulated temperature readings and the other will be an Azure Machine Learning module that will perform anomaly detection.<br/>
-1. Navigate to the **Azure Portal**** in your browser and locate your **IoT Hub**.<br/>
+In this exercise you will deploy 2 modules to your IoT Edge device. One is a telemetry generator that will produce simulated temperature readings and the other will be an Azure Machine Learning module that will perform anomaly detection.
+
+1. Navigate to the **Azure Portal**** in your browser and locate your **IoT Hub**.
 2. Select **IoT Edge** under Automatic Device Management and select your IoT Edge device.<br/>
 ![IoT Edge devices](./images/01.png)
 3. Select **Set modules**. A three-step wizard opens in the portal, which guides you through adding modules, specifying routes, and reviewing the deployment.<br/>
 ![Set Modules](./images/02.png)
 4. In the **Add Modules** step of the wizard, find the Deployment Modules section. Click **Add** then select IoT Edge Module.<br/>
 ![Add modules](./images/03.png)
-5. In the Name field, enter `tempSensor`.<br/>
-6. In the Image URI field, enter `mcr.microsoft.com/azureiotedge-simulated-temperature-sensor:1.0`. This image is available from  Microsoft supplied container registry.<br/>
+5. In the Name field, enter `tempSensor`.
+6. In the Image URI field, enter `mcr.microsoft.com/azureiotedge-simulated-temperature-sensor:1.0`. This image is available from  Microsoft supplied container registry.
 7. Leave the other settings unchanged, and select Save.<br/>
 ![IoT Edge Custom Modules](./images/04.png)
-8. Next you will add the machine learning module that you created.<br/>
-9. Under Deployment Modules, select Add.<br/>
-10. This time select Azure Machine Learning Module.<br/>
-11. In the Deployment Name field, enter `machinelearningmodule`.<br/>
-12. In the Subscription, select the Azure Subscription that contains your Azure Machine Learning Workspace.<br/>
-13. From the Workspace dropdown, select your Azure Machine Learning Workspace.<br/>
+8. Next you will add the machine learning module that you created.
+9. Under Deployment Modules, select Add.
+10. This time select Azure Machine Learning Module.
+11. In the Deployment Name field, enter `machinelearningmodule`.
+12. In the Subscription, select the Azure Subscription that contains your Azure Machine Learning Workspace.
+13. From the Workspace dropdown, select your Azure Machine Learning Workspace.
 14. From the Image dropdown, select the machine learning image you recently deployed.<br/>
 ![Machine Learning module](./images/05.png) 
-15. Select Next.<br/>
-16. Back in the Set Modules step, select **Next**.<br/>
+15. Select Next.
+16. Back in the Set Modules step, select **Next**.
 17. In the Specify Routes step, copy the **JSON** below into the text box. The first **route** transports messages from the temperature sensor to the machine learning module via the "amlInput" endpoint, which is the endpoint that all Azure Machine Learning modules use. The second **route** transports messages from the machine learning module to IoT Hub. In this route, `amlOutput` is the endpoint that all Azure Machine Learning modules use to output data, and `$upstream` denotes IoT Hub.
 
     ```
@@ -159,8 +160,8 @@ In this exercise you will deploy 2 modules to your IoT Edge device. One is a tel
     }     
     ```
 
-18. Select **Next**.<br/>
-19. In the **Review Deployment** step of the wizard, select **Submit**.<br/>
+18. Select **Next**.
+19. In the **Review Deployment** step of the wizard, select **Submit**.
 20. Return to the device details page and select **Refresh**. In addition to the edgeAgent module that was created when you first started the service, you should see another runtime module called edgeHub and the tempSensor and machinelearningmodule listed. It may take about 5-10 minutes for the two new modules to appear and start running. Once you see a **Runtime Status** of Running for all modules you can proceed.
 
 ## Exercise 6 - Examine the scored messages
