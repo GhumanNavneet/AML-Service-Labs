@@ -33,6 +33,7 @@ In the steps that follow, you will train multiple models using different sizes o
 Up until now, all of your training was executed locally on Azure Notebooks. Now you will execute the same logic targeting a remote AML Compute cluster, which you will provision from code.
 
 1. Read thru and then execute Step 12 in which you will create an AML Compute cluster using code. Once your cluster is ready, you should see output similar to the following:
+
 ```
 Creating a new compute target...
 Creating
@@ -42,6 +43,7 @@ Minimum number of nodes requested have been provisioned
 {'allocationState': 'steady', 'allocationStateTransitionTime': '2018-11-17T17:56:07.361000+00:00', 'creationTime': '2018-11-17T17:52:53.601000+00:00', 'currentNodeCount': 1, 'errors': None, 'nodeStateCounts': {'idleNodeCount': 0, 'leavingNodeCount': 0, 'preparingNodeCount': 1, 'runningNodeCount': 0, 'unusableNodeCount': 0}, 'provisioningState': 'succeeded', 'provisioningStateTransitionTime': '2018-11-17T17:53:59.653000+00:00', 'scaleSettings': {'manual': None, 'autoScale': {'maximumNodeCount': 3, 'minimumNodeCount': 1, 'initialNodeCount': 1}}, 'vmPriority': 'lowpriority', 'vmSize': 'STANDARD_DS11_V2'}
 
 ```
+
 2. With your cluster ready, you need to upload the training data to the default DataStore for your AML Workspace (which uses Azure Storage). Execute Step 13 to upload the data folder. 
 3. Next, you will need to create a training script that is similar to the code you have executed locally to train the model. Open `training/train.py` and read thru it. You do not need to execute this script, as you will send it to AML Compute for execution.
 4. Return to `01_model_training.py`. You will create an estimator that describes the configuration of the job that will execute your model training script. Execute Step 14 to create this estimator.
