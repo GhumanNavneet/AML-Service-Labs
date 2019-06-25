@@ -1,20 +1,21 @@
 # Lab 2 - Using Azure Machine Learning service Model Versioning and Run History
 
-In this lab you will use the capabilities of the Azure Machine Learning service to collect model performance metrics and to capture model version, as well as query the experimentation run history to retrieve captured metrics. 
+In this lab you will use the capabilities of the Azure Machine Learning service to collect model performance metrics and to capture model version, as well as query the experimentation run history to retrieve captured metrics.
 
 ## Exercise 0 - Get the lab files
 Confirm that you have completed lab: [lab-0](../../lab-0/azure-notebooks-setup) for Azure Notebooks before you begin.
 
 ## Exercise 1 - Get oriented to the lab files
-1. Within Azure Notebook, expand the folder `starter-artifacts/azure-notebooks/02-model-management`. 
+1. Within Azure Notebook, expand the folder `starter-artifacts/azure-notebooks/02-model-management`.
 2. Expand the `data` folder. This folder contains the CSV file `UsedCars_Affordability.csv` which contains the complete data set with labels (Affordable is 1 for affordable, 0 for not affordable).
 3. Expand `training`. This folder contains train.py which will be used later in the lab to train the model using a remote cluster provided by AML Compute.
 4. To run a lab, open `02_model_management.ipynb`. This is the Python notebook you will step thru executing in this lab.
 
 ## Exercise 2 - Train a simple model locally
 This lab builds upon the lessons learned in the previous lab, but is self contained so you work thru this lab without having to run a previous lab. As such Steps 1, 2 and 3 in the lab are not explored in detail as their goal is to setup a few experiment runs, which was covered in detail in Lab 1.
-1. Execute Step 1. Take a moment to look at the data loaded into the Pandas Dataframe - it contains data about used cars such as the price (in dollars), age (in years), KM (kilometers driven) and other attributes like weather it is automatic transimission, the number of doors, and the weight.
-2. In Step 2, we will define a helper method that locally trains, evaluates and then registers the trained model with Azure Machine Learning. Execute Step #2.
+
+1. Execute Step 1. Take a moment to look at the data loaded into the Pandas Dataframe - it contains data about used cars such as the price (in dollars), age (in years), KM (kilometers driven) and other attributes like weather it is automatic transimission, the number of doors, and the weight.<br/>
+2. In Step 2, we will define a helper method that locally trains, evaluates and then registers the trained model with Azure Machine Learning. Execute Step #2.<br/>
 3. In Step 3, we retrieve an existing Azure Machine Learning Workspace (or create a new one if desired). In this step, be sure to set the values for `subscription_id`, `resource_group`, `workspace_name` and `workspace_region` as directed by the comments. With the Workspace retrieved, we will train 3 different models using different subsets of the training data. Execute Step #3.
 
 ## Exercise 3 - Use Azure Machine Learning to query for performance metrics
