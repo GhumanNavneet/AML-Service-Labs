@@ -37,10 +37,7 @@ At a high level, here are the setup tasks you will need to perform to prepare yo
 
 ## Task 4: Locate your lab files 
 
-1.  Navigate to the `>starter-artifacts->azure-notebooks` folder where you will find all your lab files.<br/>
-
-<img src="./images/04.png" width="70%" height="70%" title="Locate your lab files">
-
+1.  Navigate to the `>starter-artifacts->azure-notebooks` folder where you will find all your lab files.
 
 ## Task 5: Update your Notebook Environment
 
