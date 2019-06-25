@@ -12,6 +12,7 @@ Confirm that you have completed lab: [lab-0](../../lab-0/azure-notebooks-setup) 
 
 ## Exercise 2 - Train a simple model locally
 This lab builds upon the lessons learned in the previous lab, but is self contained so you work thru this lab without having to run a previous lab.<br/>
+
 1. Execute step 1. Take a moment to look at the data loaded into the Pandas Dataframe - it contains data about used cars such as the price (in dollars), age (in years), KM (kilometers driven) and other attributes like weather it is automatic transimission, the number of doors, and the weight. In the function `train_eval_register_model` observe how the trained model is saved to the ./outputs folder along with the scaler that will be needed to scale inputs used later when scoring. Observe that we use `Model.register` to upload all files in the ./outputs folder to Azure Machine Learning as the model files. These model files will be retrieved later when the model is deployed into a container and operationalized as a web service.<br/>
 2. In Step 2, we retrieve or create the AML Workspace and then train one instance of the model that we will deploy. In this step, be sure to set the values for `subscription_id`, `resource_group`, `workspace_name` and `workspace_region` as directed by the comments. Execute Step #2.
 
