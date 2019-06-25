@@ -22,7 +22,7 @@ Confirm that you have completed lab: [lab-0](../../lab-0/azure-notebooks-setup) 
 7. One thing that can affect the model's performance is how much data of all the labeled training data available is used to train the model. In Step 7, you define a method that uses train_test_split from Scikit-Learn that will enable you to split the data using different percentages. Execute Step 7 to register this function.
 
 ## Exercise 3 - Use Azure Machine Learning to log performance metrics
-In the steps that follow, you will train multiple models using different sizes of training data and observe the impact on performance (accuracy). Each time you create new model, you are executing a Run in the terminology of Azure Machine Learning service. In this case, you will create one Experiment and execute multiple Runs within it, each with different training percentages (and resultant varying accuracies). 
+In the steps that follow, you will train multiple models using different sizes of training data and observe the impact on performance (accuracy). Each time you create new model, you are executing a Run in the terminology of Azure Machine Learning service. In this case, you will create one Experiment and execute multiple Runs within it, each with different training percentages (and resultant varying accuracies).
 
 1. Execute Step 8 to quickly verify you have the Azure Machine Learning SDK installed. If you get a version number back without error, you are ready to proceed.
 2. All Azure Machine Learning entities are organized within a Workspace. You can create an AML Workspace in the Azure Portal, but as the code in Step 9 shows, you can also create a Workspace directly from code. Set the values for `subscription_id`, `resource_group`, `workspace_name` and `workspace_region` as directed by the comments. Execute Step 9. You will be prompted to log in to your Azure Subscription.
@@ -40,11 +40,11 @@ Creating
 succeeded.....
 BatchAI wait for completion finished
 Minimum number of nodes requested have been provisioned
-{'allocationState': 'steady', 'allocationStateTransitionTime': '2018-11-17T17:56:07.361000+00:00', 'creationTime': '2018-11-17T17:52:53.601000+00:00', 'currentNodeCount': 1, 'errors': None, 'nodeStateCounts': {'idleNodeCount': 0, 'leavingNodeCount': 0, 'preparingNodeCount': 1, 'runningNodeCount': 0, 'unusableNodeCount': 0}, 'provisioningState': 'succeeded', 'provisioningStateTransitionTime': '2018-11-17T17:53:59.653000+00:00', 'scaleSettings': {'manual': None, 'autoScale': {'maximumNodeCount': 3, 'minimumNodeCount': 1, 'initialNodeCount': 1}}, 'vmPriority': 'lowpriority', 'vmSize': 'STANDARD_DS11_V2'}
+{'allocationState':'steady','allocationStateTransitionTime':'2018-11-17T17:56:07.361000+00:00','creationTime':'2018-11-17T17:52:53.601000+00:00','currentNodeCount':1,'errors':None,'nodeStateCounts':{'idleNodeCount':0,'leavingNodeCount':0,'preparingNodeCount':1,'runningNodeCount':0,'unusableNodeCount':0},'provisioningState':'succeeded','provisioningStateTransitionTime':'2018-11-17T17:53:59.653000+00:00','scaleSettings':{'manual': None,'autoScale':{'maximumNodeCount':3, 'minimumNodeCount':1,'initialNodeCount':1}},'vmPriority':'lowpriority','vmSize':'STANDARD_DS11_V2'}
 
 ```
 
-2. With your cluster ready, you need to upload the training data to the default DataStore for your AML Workspace (which uses Azure Storage). Execute Step 13 to upload the data folder. 
+2. With your cluster ready, you need to upload the training data to the default DataStore for your AML Workspace (which uses Azure Storage). Execute Step 13 to upload the data folder.
 3. Next, you will need to create a training script that is similar to the code you have executed locally to train the model. Open `training/train.py` and read thru it. You do not need to execute this script, as you will send it to AML Compute for execution.
 4. Return to `01_model_training.py`. You will create an estimator that describes the configuration of the job that will execute your model training script. Execute Step 14 to create this estimator.
 5. As the last step, submit the job using the `submit()` method of the Experiment object. Execute Step 15 to remotely execute your training script. The output you should see will begin with the creation of a Docker Container that contains your configured dependencies, followed by the execution of your training script.
