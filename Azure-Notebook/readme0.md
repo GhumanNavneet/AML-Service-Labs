@@ -2,7 +2,7 @@
 
 At a high level, here are the setup tasks you will need to perform to prepare your Azure Notebooks Environment (the detailed instructions follow):
 
-1. Setup an Azure Notebooks account. 
+1. Setup an Azure Notebooks account.
 
 2. Setup Azure Notebooks Project
 
@@ -10,7 +10,7 @@ At a high level, here are the setup tasks you will need to perform to prepare yo
 
 4. Locate your lab files
 
-5. Update your Notebook Environment 
+5. Update your Notebook Environment
 
 ## Task 1: Setup an Azure Notebooks account
 1. In your browser, navigate to https://notebooks.azure.com/.
@@ -33,25 +33,25 @@ At a high level, here are the setup tasks you will need to perform to prepare yo
 
 1. Navigate to your project: `azure-machine-learning-service-labs`
 
-2. Start your Notebook server on `Free Compute` by selecting the **Play** icon in the toolbar as shown:
+2. Start your Notebook server on `Free Compute` by selecting the **Play** icon in the toolbar as shown:<br/>
 
-	<img src="./images/02.png" width="70%" height="70%" title="Start Notebook Server">
+<img src="./images/02.png" width="70%" height="70%" title="Start Notebook Server">
 
-3. It should open **Jupyter Notebooks** interface.
+3. It should open **Jupyter Notebooks** interface.<br/>
 
-	<img src="./images/03.png" width="70%" height="70%" title="Jupyter Notebooks Interface">
+<img src="./images/03.png" width="70%" height="70%" title="Jupyter Notebooks Interface">
 
 ## Task 4: Locate your lab files 
 
-1.  Navigate to the `>starter-artifacts->azure-notebooks` folder where you will find all your lab files.
+1.  Navigate to the `>starter-artifacts->azure-notebooks` folder where you will find all your lab files.<br/>
 
-	<img src="./images/04.png" width="70%" height="70%" title="Locate your lab files">
+<img src="./images/04.png" width="70%" height="70%" title="Locate your lab files">
 
 
-## Task 5: Update your Notebook Environment 
+## Task 5: Update your Notebook Environment
 
 1. Open notebook: **azure-notebooks/00-setup-env/00-setup.ipynb**
 
-2. Run each cell in the notebook to install the required libraries.
+2. Run each cell in the notebook to install the required libraries.<br/>
 
-	<img src="./images/05.png" width="70%" height="70%" title="Update your Notebook Environment">
+<img src="./images/05.png" width="70%" height="70%" title="Update your Notebook Environment">
