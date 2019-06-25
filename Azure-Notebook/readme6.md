@@ -124,15 +124,15 @@ In this exercise you will use a previously trained model using the Azure Machine
 ## Exercise 5 - Deploy the modules
 In this exercise you will deploy 2 modules to your IoT Edge device. One is a telemetry generator that will produce simulated temperature readings and the other will be an Azure Machine Learning module that will perform anomaly detection.
 1. Navigate to the Azure Portal in your browser and locate your IoT Hub.
-2. Select **IoT Edge** under Automatic Device Management and select your IoT Edge device.
+2. Select **IoT Edge** under Automatic Device Management and select your IoT Edge device.<br/>
 ![IoT Edge devices](./images/01.png)
-3. Select **Set modules**. A three-step wizard opens in the portal, which guides you through adding modules, specifying routes, and reviewing the deployment.
+3. Select **Set modules**. A three-step wizard opens in the portal, which guides you through adding modules, specifying routes, and reviewing the deployment.<br/>
 ![Set Modules](./images/02.png)
-4. In the Add Modules step of the wizard, find the Deployment Modules section. Click Add then select IoT Edge Module.
+4. In the Add Modules step of the wizard, find the Deployment Modules section. Click Add then select IoT Edge Module.<br/>
 ![Add modules](./images/03.png)
 5. In the Name field, enter `tempSensor`.
 6. In the Image URI field, enter `mcr.microsoft.com/azureiotedge-simulated-temperature-sensor:1.0`. This image is available from  Microsoft supplied container registry.
-7. Leave the other settings unchanged, and select Save.
+7. Leave the other settings unchanged, and select Save.<br/>
 ![IoT Edge Custom Modules](./images/04.png)
 8. Next you will add the machine learning module that you created.
 9. Under Deployment Modules, select Add.
@@ -140,7 +140,7 @@ In this exercise you will deploy 2 modules to your IoT Edge device. One is a tel
 11. In the Deployment Name field, enter `machinelearningmodule`.
 12. In the Subscription, select the Azure Subscription that contains your Azure Machine Learning Workspace.
 13. From the Workspace dropdown, select your Azure Machine Learning Workspace.
-14. From the Image dropdown, select the machine learning image you recently deployed.
+14. From the Image dropdown, select the machine learning image you recently deployed.<br/>
 ![Machine Learning module](./images/05.png)
 15. Select Next.
 16. Back in the Set Modules step, select **Next**.
