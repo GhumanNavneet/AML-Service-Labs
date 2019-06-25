@@ -10,8 +10,8 @@ Confirm that you have completed lab: [lab-0](../../lab-0/azure-notebooks-setup) 
 2. To run a lab, open `06_deploy_to_iot_edge.ipynb`. This is the Python notebook you will step thru executing in this lab.
 
 ## Exercise 2 - Provision an IoT Edge Device and IoT Hub
-In this exercise, you will provision an Ubuntu Linux Virtual Machine that will act as your IoT Edge device. You will perform the following steps using the Azure CLI. 
-1. Open the command prompt. 
+In this exercise, you will provision an Ubuntu Linux Virtual Machine that will act as your IoT Edge device. You will perform the following steps using the Azure CLI.
+1. Open the command prompt.
 2. Confirm the selected subscription used by the Azure CLI is the desired one by running:
 ```
 az account show
@@ -24,7 +24,7 @@ az account set --subscription "Demo Creation"
 ```
 az extension add --name azure-cli-iot-ext
 ```
-5. Next, create a Resource Group that will contain the IoT Edge related resources.  
+5. Next, create a Resource Group that will contain the IoT Edge related resources.
 ```
 az group create --name IoTEdgeResources --location westus2
 ```
@@ -69,14 +69,14 @@ sudo apt-get install moby-cli
 sudo apt-get update
 sudo apt-get install iotedge
 ```
-5. Get the IP address of the docker0 interface by running `ifconfig`. The output should be similar to the following. You want the value that follows inet addr (which is 172.17.0.1 in the below example). 
+5. Get the IP address of the docker0 interface by running `ifconfig`. The output should be similar to the following. You want the value that follows inet addr (which is 172.17.0.1 in the below example).
 ```
 ....
 docker0   Link encap:Ethernet  HWaddr 02:42:30:d8:7f:e9
           inet addr:172.17.0.1  Bcast:172.17.255.255  Mask:255.255.0.0
 ....
 ```
-6. Open the config.yaml file which contains the IoT Edge configuration in the nano editor. 
+6. Open the config.yaml file which contains the IoT Edge configuration in the nano editor.
 ```
 sudo nano /etc/iotedge/config.yaml
 ```
@@ -113,16 +113,16 @@ sudo systemctl status iotedge
 ```
 sudo iotedge list
 ```
-16. Your device is now configured and ready to receive cloud-deployed modules. 
+16. Your device is now configured and ready to receive cloud-deployed modules.
 
 ## Exercise 4 - Prepare the Azure Machine Learning module
-In this exercise you will use a previously trained model using the Azure Machine Learning SDK and deploy it along with a scoring script to an image. This model will score temperature telemetry data for anomalies. In a subsequent exercise, you will deploy this module to your IoT Edge device to perform scoring on the device. 
-1. Return to Azure Notebooks and `06_deploy_to_iot_edge.ipynb`. 
-2. In Step 1, you will create a new or retrieve an existing Azure Machine Learning Workspace as has been demonstrated in previous labs. Execute Step 1.
+In this exercise you will use a previously trained model using the Azure Machine Learning SDK and deploy it along with a scoring script to an image. This model will score temperature telemetry data for anomalies. In a subsequent exercise, you will deploy this module to your IoT Edge device to perform scoring on the device.
+1. Return to Azure Notebooks and `06_deploy_to_iot_edge.ipynb`.
+2. In Step 1, you will create a new or retrieve an existing Azure Machine Learning Workspace as has been demonstrated in previous labs.Execute Step 1.
 3. With a Workspace in hand you are ready to build a container that wraps your model. This consists of three steps- creating a ContainerImage, registering the Model and creating an Image. Execute Step 2 and wait for it to complete. When it is finished you will have a Docker container image that you will be able to deploy to your IoT Edge device.
 
 ## Exercise 5 - Deploy the modules
-In this exercise you will deploy 2 modules to your IoT Edge device. One is a telemetry generator that will produce simulated temperature readings and the other will be an Azure Machine Learning module that will perform anomaly detection. 
+In this exercise you will deploy 2 modules to your IoT Edge device. One is a telemetry generator that will produce simulated temperature readings and the other will be an Azure Machine Learning module that will perform anomaly detection.
 1. Navigate to the Azure Portal in your browser and locate your IoT Hub.
 2. Select **IoT Edge** under Automatic Device Management and select your IoT Edge device.
 ![IoT Edge devices](./images/01.png)
@@ -147,10 +147,10 @@ In this exercise you will deploy 2 modules to your IoT Edge device. One is a tel
 17. In the Specify Routes step, copy the JSON below into the text box. The first route transports messages from the temperature sensor to the machine learning module via the "amlInput" endpoint, which is the endpoint that all Azure Machine Learning modules use. The second route transports messages from the machine learning module to IoT Hub. In this route, `amlOutput` is the endpoint that all Azure Machine Learning modules use to output data, and `$upstream` denotes IoT Hub.
 ```
 {
-    "routes": {
-        "sensorToMachineLearning":"FROM /messages/modules/tempSensor/outputs/temperatureOutput INTO BrokeredEndpoint(\"/modules/machinelearningmodule/inputs/amlInput\")",
-        "machineLearningToIoTHub": "FROM /messages/modules/machinelearningmodule/outputs/amlOutput INTO $upstream"
-    }
+"routes": {
+"sensorToMachineLearning":"FROM /messages/modules/tempSensor/outputs/temperatureOutput INTO BrokeredEndpoint(\"/modules/machinelearningmodule/inputs/amlInput\")",
+"machineLearningToIoTHub": "FROM /messages/modules/machinelearningmodule/outputs/amlOutput INTO $upstream"
+}
 }
 ```
 10. Select Next.
@@ -160,7 +160,7 @@ In this exercise you will deploy 2 modules to your IoT Edge device. One is a tel
 ## Exercise 6 - Examine the scored messages
 You can view messages being generated by each IoT Edge module, and you can view messages that are delivered to your IoT hub.
 
-1. Return to your SSH session connected to your IoT Edge VM. 
+1. Return to your SSH session connected to your IoT Edge VM.
 2. View the list of modules on your device be running the following.
 ```
 sudo iotedge list
@@ -172,3 +172,4 @@ iotedge logs tempSensor -f
 4. View the anomaly detection scored messages being sent by the `machinelearningmodule` by running the following command.
 ```
 iotedge logs machinelearningmodule -f
+```
