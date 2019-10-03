@@ -7,26 +7,41 @@ If you have not cloned this repository to your virtual machine, do so now. All o
 ## Exercise 1 - Get oriented to the lab files
 1. On your virtual machine expand the folder `01-model-training` which is under `C:\azure-machine-learning-service-labs-master\azure-machine-learning-service-labs-master\starter-artifacts\visual-studio-code`
 2. Expand the `data` folder. This folder contains two CSV files. `UsedCars_Clean.csv` represents the unlabeled data and `UsedCars_Affordability.csv` contains the complete data set with labels (Affordable is 1 for affordable, 0 for not affordable).<br/>
+    <img src="images/data.jpg"/><br/>
 3. Expand `training`. This folder contains train.py which will be used later in the lab to train the model using a remote cluster provided by AML Compute.<br/>
+    <img src="images/train.jpg"/><br/>
 4. To run a lab, start Visual Studio Code and open the folder: `01-model-training` and click the starting python file: `01_model_training.py`.<br/>
+    <img src="images/vs1.jpg"/><br/>
 5. Confirm that your have setup `azure_automl` as your interpreter.<br/>
+    <img src="images/vs2.jpg"/><br/>
+    <img src="images/vs3.jpg"/><br/>
 6. `01_model_training.py` is the Python file you will step through executing in this lab.<br/>
 7. For each step click on `Run Cell` just above the step.
+    <img src="images/vs4.jpg"/><br/>
 
 ## Exercise 2 - Train a simple model locally
 1. Execute **Step 1**. Take a moment to look at the data loaded into the Pandas Dataframe - it contains data about used cars such as the price (in dollars), age (in years), KM (kilometers driven) and other attributes like weather it is automatic transimission, the number of doors, and the weight.<br/>
+    <img src="images/vs5.jpg"/><br/>
 2. In **Step 2**, we are going to try and build a model that can answer the question "Can I afford a car that is X months old and has Y kilometers on it, given I have $12,000 to spend?". We will engineer the label for affordable. Execute **Step 2**.<br/>
+    <img src="images/vs6.jpg"/><br/>
 3. We are going to train a Logistic Regression model locally. This type of model requires us to standardize the scale of our training features Age and KM, so we use the `StandardScaler` from Scikit-Learn to transform these features so that they have values centered with a mean around 0 (mostly between -2.96 and 1.29). Execute **Step 3**. Observe the difference in min and max values between the un-scaled and scaled Dataframes.<br/>
+    <img src="images/vs7.jpg"/><br/>
 4. Train the model by fitting a LogisticRegression against the scaled input features (X_scaled) and the labels (y). Execute **Step 4**.<br/>
+    <img src="images/vs8.jpg"/><br/>
 5. Try prediction - if you set the age to 60 months and km to 40,000, does the model predict you can afford the car? Execute **Step 5**.<br/>
+    <img src="images/vs9.jpg"/><br/>
 6. Now, let's get a sense for how accurate the model is. Execute **Step 6**. What was your model's accuracy?<br/>
+    <img src="images/vs12.jpg"/><br/>
 7. One thing that can affect the model's performance is how much data of all the labeled training data available is used to train the model. In **Step 7**, you define a method that uses train_test_split from Scikit-Learn that will enable you to split the data using different percentages. Execute **Step 7** to register this function.
+    <img src="images/vs11.jpg"/><br/>
 
 ## Exercise 3 - Use Azure Machine Learning to log performance metrics
 In the steps that follow, you will train multiple models using different sizes of training data and observe the impact on performance (accuracy). Each time you create new model, you are executing a Run in the terminology of Azure Machine Learning service. In this case, you will create one Experiment and execute multiple Runs within it, each with different training percentages (and resultant varying accuracies).
 
 1. Execute **Step 8** to quickly verify you have the Azure Machine Learning SDK installed. If you get a version number back without error, you are ready to proceed.<br/>
+    <img src="images/vs11.jpg"/><br/>
 2. All Azure Machine Learning entities are organized within a Workspace. You can create an AML Workspace in the Azure Portal, but as the code in **Step 9** shows, you can also create a Workspace directly from code. Set the values for `subscription_id`, `resource_group`, `workspace_name` and `workspace_region` as directed by the comments. Execute **Step 9**. You will be prompted to log in to your Azure Subscription.<br/>
+    <img src="images/vs10.jpg"/><br/>
 3. To begin capturing metrics, you must first create an Experiment and then call `start_logging()` on that Experiment. The return value of this call is a Run. This root run can have other child runs. When you are finished with an experiment run, use `complete()` to close out the root run. Execute **Step 10** to train four different models using differing amounts of training data and log the results to Azure Machine Learning.<br/>
 4. Now that you have captured history for various runs, you can review the runs. You could use the Azure Portal for this - go to the Azure Portal, find your Azure Machine Learning Workspace, select Experiments and select the UsedCars_Experiment. However, in this case we will use the AML SDK to query for the runs. Select and execute **Step 11** to view the runs and their status.
 
